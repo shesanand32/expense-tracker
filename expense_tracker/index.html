@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expense Tracker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Expense Tracker</h1>
+        </header>
+
+        <section class="summary_cards">
+            <div class="card Income_card">
+                <h3>Total Income</h3>
+                <h2 class="income_total">₹ 0</h2>
+            </div>
+
+            <div class="card Expense_card">
+                <h3>Total Expenses</h3>
+                <h2 class="Expense_total">₹ 0</h2>
+            </div>
+
+            <div class="card Balance_card">
+                <h3>Balance</h3>
+                <h2 class="Balance_total">₹ 0</h2>
+            </div>
+        </section>
+
+        <main>
+            <section class="form_box">
+                <h2>Add Transaction</h2>
+                <form class="Transaction_form">
+                    <label>Description</label>
+                    <input class="description" type="text"
+                           placeholder="Salary, Rent, Groceries" required>
+
+                    <label>Amount</label>
+                    <input class="Amount" type="number"
+                           placeholder="Enter amount" min="1" required>
+
+                    <label>Type</label>
+                    <select class="type" required>
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
+                    </select>
+
+                    <label>Category</label>
+                    <select class="category_type" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Housing">Housing</option>
+                        <option value="Food">Food</option>
+                        <option value="Health">Health</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label>Date</label>
+                    <input type="date" class="date" required>
+
+                    <button type="submit" class="transaction_button">
+                        Add Transaction
+                    </button>
+                </form>
+            </section>
+
+            <section class="list_box">
+                <h2>Transactions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="transaction-list"></tbody>
+                </table>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
